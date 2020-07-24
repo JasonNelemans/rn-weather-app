@@ -25,8 +25,8 @@ export default function App() {
   }, [unitsSystem]);
 
   async function load() {
-    setCurrentWeather(null); //Set to null to catch potential error.
-    setErrorMessage(null);
+    setCurrentWeather(null); // Set to null to catch potential error.
+    setErrorMessage(null); // And also to activate load screen.
     try {
       let { status } = await Location.requestPermissionsAsync();
 
@@ -63,7 +63,7 @@ export default function App() {
             unitsSystem={unitsSystem}
             setUnitsSystem={setUnitsSystem}
           />
-          <ReloadIcon />
+          <ReloadIcon load={load} />
           <WeatherInfo currentWeather={currentWeather} />
         </View>
       </View>
