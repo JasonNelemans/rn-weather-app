@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 
 // Utils
 import { colors } from '../utils/index';
@@ -19,10 +20,30 @@ export default function WeatherDetails({ currentWeather }) {
             borderRightWidth: 1,
             borderRightColor: BORDER_COLOR,
           }}>
-          <Text>{feels_like}</Text>
+          <View style={styles.WeatherDetailsRow}>
+            <FontAwesome5
+              name='temperature-low'
+              size={25}
+              color={PRIMARY_COLOR}
+            />
+            <View style={styles.WeatherDetailsItems}>
+              <Text>Feels like:</Text>
+              <Text style={styles.textSecondary}>{feels_like}</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.WeatherDetailsBox}>
-          <Text>{humidity}</Text>
+          <View style={styles.WeatherDetailsRow}>
+            <MaterialCommunityIcons
+              name='water'
+              size={30}
+              color={PRIMARY_COLOR}
+            />
+            <View style={styles.WeatherDetailsItems}>
+              <Text>Humidity:</Text>
+              <Text style={styles.textSecondary}>{humidity}</Text>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -45,5 +66,15 @@ const styles = StyleSheet.create({
   WeatherDetailsBox: {
     flex: 1,
     padding: 20,
+  },
+  WeatherDetailsItems: {
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+  },
+  textSecondary: {
+    fontSize: 15,
+    color: SECONDARY_COLOR,
+    fontWeight: '700',
+    margin: 7,
   },
 });
