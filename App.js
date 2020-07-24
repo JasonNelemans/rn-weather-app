@@ -47,9 +47,6 @@ export default function App() {
   }
 
   if (currentWeather) {
-    const {
-      main: { temp },
-    } = currentWeather;
     return (
       <View style={styles.container}>
         <StatusBar style='auto' />
