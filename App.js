@@ -67,13 +67,17 @@ export default function App() {
           <ReloadIcon load={load} />
           <WeatherInfo currentWeather={currentWeather} />
         </View>
-        <WeatherDetails currentWeather={currentWeather} />
+        <WeatherDetails
+          currentWeather={currentWeather}
+          unitsSystem={unitsSystem}
+        />
       </View>
     );
   } else if (errorMessage) {
     return (
       <View style={styles.container}>
-        <Text>{errorMessage}</Text>
+        <ReloadIcon load={load} />
+        <Text style={{ textAlign: 'center' }}>{errorMessage}</Text>
         <StatusBar style='auto' />
       </View>
     );
