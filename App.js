@@ -41,10 +41,19 @@ export default function App() {
   }
 
   if (currentWeather) {
-    const {} = currentWeather;
+    const {
+      main: { temp },
+    } = currentWeather;
     return (
       <View style={styles.container}>
-        <Text>This is the third time!</Text>
+        <Text>${temp}</Text>
+        <StatusBar style='auto' />
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text>{errorMessage}</Text>
         <StatusBar style='auto' />
       </View>
     );
