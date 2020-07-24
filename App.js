@@ -26,7 +26,7 @@ export default function App() {
 
       const { latitude, longitude } = location.coords;
 
-      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_API_KEY}`;
+      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${123}`;
 
       const response = await fetch(weatherUrl);
 
@@ -37,7 +37,9 @@ export default function App() {
       } else {
         setErrorMessage(result.message);
       }
-    } catch (error) {}
+    } catch (error) {
+      setErrorMessage(error.messsage);
+    }
   }
 
   if (currentWeather) {
