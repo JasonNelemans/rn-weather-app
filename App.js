@@ -52,7 +52,10 @@ export default function App() {
       <View style={styles.container}>
         <StatusBar style='auto' />
         <View style={styles.main}>
-          <UnitsPicker />
+          <UnitsPicker
+            unitsSystem={unitsSystem}
+            setUnitsSystem={setUnitsSystem}
+          />
           <WeatherInfo currentWeather={currentWeather} />
         </View>
       </View>
