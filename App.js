@@ -20,6 +20,7 @@ export default function App() {
   }, [unitsSystem]);
 
   async function load() {
+    setCurrentWeather(null); //Set to null to catch potential error.
     try {
       let { status } = await Location.requestPermissionsAsync();
 

@@ -1,13 +1,22 @@
 /* 
 -------------------API Calls--------------------------
+
 https://openweathermap.org/img/wn/${icon}@4x.png 
 <- to request weather icon of weather property in e.g. currentWeather object.
 
 ------------------------------------------------------
 
 
+-------------------Future Features--------------------
+
 I can add more API calls later to expand on the App, like get weather by city name, etc. 
-Or make API calls to multiple cities and compare them. 
+Or make API calls to multiple cities and compare them.
+
+------------------------------------------------------
+
+
+
+-------------------Reminders---------------------------
 
 rnf => Code snippet to create React Native functional component. 
 
