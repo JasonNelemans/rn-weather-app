@@ -17,7 +17,7 @@ export default function App() {
 
   useEffect(() => {
     load();
-  }, []);
+  }, [unitsSystem]);
 
   async function load() {
     try {
