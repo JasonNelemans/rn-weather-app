@@ -9,6 +9,7 @@ const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?';
 export default function App() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [currentWeather, setCurrentWeather] = useState(null);
+  const [unitsSystem, setUnitsSystem] = useState('metric');
 
   useEffect(() => {
     load();
@@ -26,7 +27,7 @@ export default function App() {
 
       const { latitude, longitude } = location.coords;
 
-      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${123}`;
+      const weatherUrl = `${BASE_WEATHER_URL}lat=${latitude}&lon=${longitude}&units=${unitsSystem}&appid=${WEATHER_API_KEY}`;
 
       const response = await fetch(weatherUrl);
 
@@ -48,8 +49,10 @@ export default function App() {
     } = currentWeather;
     return (
       <View style={styles.container}>
-        <Text>${temp}</Text>
         <StatusBar style='auto' />
+        <View style={styles.main}>
+          <Text>{temp}</Text>
+        </View>
       </View>
     );
   } else {
@@ -65,8 +68,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
-    alignItems: 'center',
     justifyContent: 'center',
+  },
+  main: {
+    justifyContent: 'center',
+    flex: 1,
   },
 });
