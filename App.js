@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import * as Location from 'expo-location';
 
 // Api
-import { WEATHER_API_KEY } from 'react-native-dotenv';
+const WEATHER_API_KEY = '4c0b773edf1b12fe8be246a59f64a0b2';
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?';
 
 // Components
